@@ -1,12 +1,12 @@
 namespace SIMS.WinForms.Domain
 {
-    public class Product
+    public sealed class Customer
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Code { get; set; } = "";
-        public string Name { get; set; } = "";
-        public decimal Price { get; set; }
-        public int StockQty { get; set; }
+        public string FullName { get; set; } = "";
+        public string? Phone { get; set; }
+        public string? Address { get; set; }
         public bool IsActive { get; set; } = true;
     }
 }

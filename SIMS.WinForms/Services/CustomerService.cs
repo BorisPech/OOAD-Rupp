@@ -67,6 +67,5 @@ namespace SIMS.WinForms.Services
                     throw new Exception("Customer Code already exists.");
             }
         }
-        public int Add(Customer c) => Insert(c);
     }
 }
