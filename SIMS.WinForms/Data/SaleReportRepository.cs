@@ -28,7 +28,7 @@ namespace SIMS.WinForms.Data
         {
             var list = new List<SaleReportRow>();
 
-            using (var conn = SqliteConnectionFactory.CreateOpen())
+            using (var conn = SqliteConnectionFactory.Instance.CreateOpen())
             using (var cmd = conn.CreateCommand())
             {
                 cmd.CommandText = @"

@@ -27,6 +27,5 @@ namespace SIMS.WinForms.Data
             conn.Open();
             return conn;
         }
-        public static Microsoft.Data.Sqlite.SqliteConnection CreateOpen() => Instance.CreateOpen();
     }
 }

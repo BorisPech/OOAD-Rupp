@@ -9,7 +9,7 @@ namespace SIMS.WinForms.Data.Repositories
     {
         public long AddSaleWithItems(Sale sale)
         {
-            using (var conn = SqliteConnectionFactory.CreateOpen())
+            using (var conn = SqliteConnectionFactory.Instance.CreateOpen())
             using (var tx = conn.BeginTransaction())
             {
                 try
@@ -81,7 +81,7 @@ VALUES(@SaleId,@ProductId,@ProductCode,@ProductName,@UnitPrice,@Qty);
         {
             var list = new List<Sale>();
 
-            using (var conn = SqliteConnectionFactory.CreateOpen())
+            using (var conn = SqliteConnectionFactory.Instance.CreateOpen())
             using (var cmd = conn.CreateCommand())
             {
                 cmd.CommandText = @"

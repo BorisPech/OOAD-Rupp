@@ -11,7 +11,7 @@ namespace SIMS.WinForms.Data.Repositories
         {
             var list = new List<Product>();
 
-            using (var conn = SqliteConnectionFactory.CreateOpen())
+            using (var conn = SqliteConnectionFactory.Instance.CreateOpen())
             using (var cmd = conn.CreateCommand())
             {
                 cmd.CommandText = @"
@@ -44,7 +44,7 @@ ORDER BY Stock ASC;
 
         public void AdjustStock(long productId, int delta)
         {
-            using (var conn = SqliteConnectionFactory.CreateOpen())
+            using (var conn = SqliteConnectionFactory.Instance.CreateOpen())
             using (var cmd = conn.CreateCommand())
             {
                 cmd.CommandText = "UPDATE Products SET Stock = Stock + @Delta WHERE Id=@Id;";
